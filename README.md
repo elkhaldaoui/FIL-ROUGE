@@ -1,4 +1,4 @@
-                                                     ^_____^ PROJET FILE ROUGE ^_____^
+                                             ^_____^ PROJET FILE ROUGE ^_____^
 
 Contexte du projet :
 
