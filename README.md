@@ -1,9 +1,9 @@
-# FILE ROUGE
+                                                                                                 	PROJET FILE ROUGE
 
-	PROJET FILE ROUGE
+Contexte du projet :
 
-Contexte du projet
 L'application est un espace spécial pour une usine spécifique, les travailleurs peuvent écrire des rapports quotidiens et les relevés et remarquer les changements sur tous les machines. De par mon expérience professionnelle, j'ai remarqué qu'il est difficile de rédiger des relevé/rapports quotidiens sur les livres qui doivent être rendus en fin de journée. Avec cette application, tous les travailleurs et fonctionnaires pourront lire toutes les données de manière simple et facile.
+
 •	Autant utilisateur je peux m'inscrire afin de participer les options proposées par la plateforme.
 •	Autant que développeur frontend je réalise le formulaire d'inscription.
 •	Autant que développeur backend je réalise le backend du formulaire d'inscription.
@@ -19,20 +19,17 @@ L'application est un espace spécial pour une usine spécifique, les travailleur
 •	Autant que développeure sera un endroit désigné pour voir les niveaux d'eau(alimentaire/condensat/noria).
 •	Autant que développeure sera un endroit désigné pour voir les changements possible au  niveau des machines.
 •	En plus d'avoir un endroit pour ajouter des notifications.
-Pré-requis.
-•	Travailler avec un workflow GitHub
-•	Travailler avec un tableau SCRUM
-•	Travailler avec les technologies [HTML5, CSS3 , BOOTSTRAP, PHP (OOP), JAVASCRIPT]
-Déroulement
-•	Ajouter les histoires utilisateur dans le back log de manière organisé.
-•	Réaliser les tâches en respectant un workflow GitHub
-Modalités d'évaluation
+
+Modalités d'évaluation :
+
 Présenter une défense publique de son travail devant les formateurs de Youcode.
 Démontrer le contenu et la fonctionnalité du site Web Démontrer le site dans différentes tailles d'écran (responsive design).
 Démontrer que votre code se valide correctement. Montrez le code source et expliquez brièvement comment il fonctionne. 
 En option, vous pouvez préparer une présentation (3-4 diapositives). 
 Conseils pour une meilleure présentation : Soyez bien préparé pour présenter le maximum de votre travail en un minimum de temps. Ouvrez toutes les ressources du projet à l'avance pour gagner du temps.
-Livrables
+
+Livrables :
+
 Soumettez l'URL du code source de votre projet dans GitHub en tant que livrable. Publiez votre projet sur Internet. Mettez un lien vers votre projet en direct dans la description du projet sur GitHub. Soumettez l'URL du tableau Scrum.
 
 
