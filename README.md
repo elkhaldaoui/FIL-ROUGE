@@ -1,4 +1,4 @@
-                                             ^_____^ PROJET FILE ROUGE ^_____^
+                                             ^_____^ PROJET GESTION DES STATUTS INDUSTRIELE ^_____^
 
 Contexte du projet :
 
