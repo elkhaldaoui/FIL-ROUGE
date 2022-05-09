@@ -1,4 +1,4 @@
-                                             ^_____^ PROJET GESTION DES STATUTS INDUSTRIELE ^_____^
+                                           PROJET GESTION DES STATUTS INDUSTRIELE 
 
 Contexte du projet :
 
