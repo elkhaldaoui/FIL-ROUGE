@@ -1,0 +1,64 @@
+
+
+/* #sidebarToggle.navIcons{
+  transform: rotate(180deg);
+} */
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f8f6ff;
+}
+  
+a{
+    text-decoration: none;
+    color: #333;
+}
+  
+a:hover{
+    color: #333;
+}
+
+.logo{
+    margin: 0 auto;
+}
+
+.navbar{
+    background-color:  rgb(171, 183, 248);
+    border-radius: 10px;
+}
+
+  
+  
+.nav-bar_left .nav-link {
+margin: 5px 0 ;
+}
+
+.div-link a{
+    width: 100%;
+    background-color: azure;
+    border-radius: 10px;
+}
+  
+.logo img{
+    margin: 0 20px;
+}
+
+.Sidebar{
+    background-color: rgb(171, 183, 248);
+}
+
+.navIcons{
+    cursor: pointer;
+}
+
+.form-control{
+    margin-top: 10px;
+}
+
+.btn-sh{
+    margin-top: 10px;
+}
+
