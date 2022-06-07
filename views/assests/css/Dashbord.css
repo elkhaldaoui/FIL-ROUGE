@@ -9,25 +9,25 @@
 }
 
 body{
-    background-color: #f8f6ff;
+    background-color: #ffffff;
 }
   
 a{
     text-decoration: none;
-    color: #333;
+    color: rgb(157, 153, 153);
 }
   
 a:hover{
-    color: #333;
+    color: rgb(168, 167, 167);
 }
 
 .logo{
-    margin: 0 auto;
+    margin: 5 auto;
 }
 
 .navbar{
-    background-color:  rgb(171, 183, 248);
-    border-radius: 10px;
+    background-color:  rgb(123, 122, 122);
+    
 }
 
   
@@ -43,11 +43,11 @@ margin: 5px 0 ;
 }
   
 .logo img{
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .Sidebar{
-    background-color: rgb(171, 183, 248);
+    background-color: rgb(123, 122, 122);
 }
 
 .navIcons{
