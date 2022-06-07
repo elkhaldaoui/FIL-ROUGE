@@ -19,7 +19,6 @@
             <div class="row">
             <div class="col-12 mt-3 mb-1">
             <h5><b>Statistics Dasboard</b></h5>
-            <h4>YOUWORK give you a lot of statictics</h4>
             <br>
             </div>
             </div>

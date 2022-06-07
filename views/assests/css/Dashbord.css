@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: #ffffff;
+    background-color: #ececec;
 }
   
 a{
@@ -26,7 +26,7 @@ a:hover{
 }
 
 .navbar{
-    background-color:  rgb(123, 122, 122);
+    background-color:  rgb(85, 137, 205);
     
 }
 
@@ -47,7 +47,7 @@ margin: 5px 0 ;
 }
 
 .Sidebar{
-    background-color: rgb(123, 122, 122);
+    background-color: rgb(85, 137, 205);
 }
 
 .navIcons{
