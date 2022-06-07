@@ -1,5 +1,4 @@
 <?php
-
 // Compare route with given url and method
 function CompareUrl(string $url,string $Route,string $method){
     if($url != '/'){$url = rtrim($url,"/");}
