@@ -25,7 +25,7 @@
         <div class="text-center text-black" style="margin-top: 200px;">
             <h1><b>Hello!</b></h1>
             <h3>No Account ? ask your admin to create one for you </h3>
-            <h5>Already have an account ? <a href="login.html">Login here.</a></h5>
+            <h5>Already have an account ? <a href="login">Login here.</a></h5>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

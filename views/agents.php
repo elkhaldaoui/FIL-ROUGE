@@ -1,15 +1,15 @@
 <?php
-  require_once '../views/includes/head.php';
+  require_once 'views/includes/head.php';
 ?>
 
 <div class="d-flex" id="wrapper">
   <?php
-    require_once '../views/includes/sidbar.php';
+    require_once 'views/includes/sidbar.php';
   ?>
 
   <div class="w-100">
     <?php
-      require_once '../views/includes/navbar.php';
+      require_once 'views/includes/navbar.php';
     ?>
     <!-- Page content-->
     <!-- table -->
@@ -210,7 +210,7 @@
         <tbody>
         <tr>
         <td>1</td>
-        <td><a href="#"><img src="/examples/images/avatar/1.jpg" class="avatar" alt="Avatar"> Michael Holz</a></td>
+        <td><a href="#"> Michael Holz</a></td>
         <td>04/10/2013</td>                        
         <td>Admin</td>
         <td><span class="status text-success">&bull;</span> Active</td>
@@ -221,7 +221,7 @@
         </tr>
         <tr>
         <td>2</td>
-        <td><a href="#"><img src="/examples/images/avatar/2.jpg" class="avatar" alt="Avatar"> Paula Wilson</a></td>
+        <td><a href="#"> Paula Wilson</a></td>
         <td>05/08/2014</td>                       
         <td>Publisher</td>
         <td><span class="status text-success">&bull;</span> Active</td>
@@ -232,7 +232,7 @@
         </tr>
         <tr>
         <td>3</td>
-        <td><a href="#"><img src="/examples/images/avatar/3.jpg" class="avatar" alt="Avatar"> Antonio Moreno</a></td>
+        <td><a href="#"> Antonio Moreno</a></td>
         <td>11/05/2015</td>
         <td>Publisher</td>
         <td><span class="status text-danger">&bull;</span> Suspended</td>                        
@@ -243,7 +243,7 @@
         </tr>
         <tr>
         <td>4</td>
-        <td><a href="#"><img src="/examples/images/avatar/4.jpg" class="avatar" alt="Avatar"> Mary Saveley</a></td>
+        <td><a href="#"> Mary Saveley</a></td>
         <td>06/09/2016</td>
         <td>Reviewer</td>
         <td><span class="status text-success">&bull;</span> Active</td>
@@ -254,7 +254,7 @@
         </tr>
         <tr>
         <td>5</td>
-        <td><a href="#"><img src="/examples/images/avatar/5.jpg" class="avatar" alt="Avatar"> Martin Sommer</a></td>
+        <td><a href="#"> Martin Sommer</a></td>
         <td>12/08/2017</td>                        
         <td>Moderator</td>
         <td><span class="status text-warning">&bull;</span> Inactive</td>

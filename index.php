@@ -1,12 +1,12 @@
 <?php
-  require_once './view/includes/header.php';
+  require_once './views/includes/head.php';
   require_once './autoload.php';
   require_once "./controllers/HomeController.php";
-  require_once "./view/includes/alerts.php";
+  require_once "./views/includes/alerts.php";
 
 
   $home= new HomeController();
-  $pages= ['home','addclient','updateclient','deleteclient','displayclient','addadmin','updateadmin','deleteadmin','displayadmin','addproduct','updateproduct','deleteproduct','displayproduct','addpayment','updatepayment','deletepayment','displaypayment'];
+  $pages= ['home','agents','anomalies','dashboard','login','rapports','releves'];
 if(isset($_GET['page'])){
    if(in_array($_GET['page'],$pages)){
            $page=$_GET['page'];
@@ -19,5 +19,5 @@ if(isset($_GET['page'])){
 }
 ?> 
 <?php
-require_once './view/includes/footer.php';
+require_once './views/includes/footer.php';
 ?>

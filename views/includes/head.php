@@ -7,8 +7,8 @@
         <!-- Favicon-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="./assests/css/bootstrap.css">
-        <link rel="stylesheet" href="./assests/css/Dashbord.css">
+        <link rel="stylesheet" href="views/assests/css/bootstrap.css">
+        <link rel="stylesheet" href="views/assests/css/Dashbord.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
