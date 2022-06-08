@@ -1,9 +1,6 @@
-
 <!-- Sidebar-->
 <div class="Sidebar" id="sidebar-wrapper">
-    <div class="logo">
-        <img  src="views/assests/img/admin.ico" alt="">
-    </div>
+<div class="header_img"> <img class="rounded-circle mx-5 p-4" src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
     <br>
     <div class="list-group list-group-flush ms-3">
         <div class="icon_Home pt-1 me-4 d-flex me-3 div-link">
@@ -37,3 +34,4 @@
         </div>
     </div>
 </div>
+<!-- /#sidebar-wrapper -->

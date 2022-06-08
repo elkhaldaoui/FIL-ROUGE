@@ -1,7 +1,7 @@
 <!-- Page content wrapper-->
 <div id="page-content-wrapper" class="body-page">
     <!-- Top navigation-->
-    <nav class="navbar navbar-expand-lg  navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand navIcons" id="sidebarToggle">
             <i class="bi bi-text-left fs-5 ms-3"></i>

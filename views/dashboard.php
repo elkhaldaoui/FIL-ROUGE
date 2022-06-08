@@ -112,5 +112,5 @@
 </div>
 
 <?php
-require_once '../views/includes/footer.php';
+require_once 'views/includes/footer.php';
 ?>

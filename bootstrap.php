@@ -1,5 +1,5 @@
 <?php 
 
-define('BASE_URL','http://localhost/f_rouge/');
+define('BASE_URL','http://localhost/FIL-ROUGE/');
 
 ?>
