@@ -1,35 +1,23 @@
 <?php
+  require_once './view/includes/header.php';
+  require_once './autoload.php';
+  require_once "./controllers/HomeController.php";
+  require_once "./view/includes/alerts.php";
 
-session_start();
 
-require_once './_config/config.php';
-
-function custom_autoloader($class) {
-    $file = '_classes/' . $class . '.php';
-    if(file_exists($file)) {
-        require_once $file;
-    }
+  $home= new HomeController();
+  $pages= ['home','addclient','updateclient','deleteclient','displayclient','addadmin','updateadmin','deleteadmin','displayadmin','addproduct','updateproduct','deleteproduct','displayproduct','addpayment','updatepayment','deletepayment','displaypayment'];
+if(isset($_GET['page'])){
+   if(in_array($_GET['page'],$pages)){
+           $page=$_GET['page'];
+           $home->index($page);
+   }else{
+     include('./view/includes/404.php');
+   }
+}else{
+  $home->index('home');
 }
-require __DIR__ . '/vendor/autoload.php';
-spl_autoload_register('custom_autoloader');
-
-require_once './helpers/functions.php';
-
-$notFound = true;
-require_once './routes/web.route.php';
-
-
-$url = explode('/',$_GET['url']);
-if(str_contains($url[0],"api") || str_contains($url[1],"api")){
-    header('content-type: application/json; charset=utf-8');
-}
-ob_start();
-require_once './routes/api.route.php';
-$jsonData = ob_get_clean();
-echo json_encode($jsonData);
-// if no page found
-if($notFound){
-    require "./_classes/controller.php";
-    $controller = new controller();
-    $controller->view("404",array());
-}
+?> 
+<?php
+require_once './view/includes/footer.php';
+?>
