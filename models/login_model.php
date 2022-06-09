@@ -1,34 +1,15 @@
 <?php
 
-class Login_Model extends Model
+class Login_Model 
 {
-	public function __construct()
-	{
-		parent::__construct();
-		Session::init();
-	}
 
-	public function run()
+
+	public function run($pass,$email)
 	{
-		
-		$email=$_POST['email'];
-		$password=md5($_POST['password']);
-		
-		$res= $this->db->select("SELECT * FROM agents WHERE email = '".$email."' AND password = '".$password."'");
-		$count = count($res);
-		
-		if ($count > 0) {
-			
-			Session::init();
-			Session::set('role', "admin");
-			Session::set('email', $email);
-			Session::set('password', $res[0]['password']);
-			header('location: '.URL.'login/index');
-		} 
-		   else {
-			Session::set('loggedIn', false);
-			header('location: '.URL);
-		}
+	
+		$res= Db::connect()->query("SELECT * FROM agents WHERE email='$email' and password ='$pass'");
+		return $res->fetch(PDO::FETCH_ASSOC);
+	
 		
 		
 	}
