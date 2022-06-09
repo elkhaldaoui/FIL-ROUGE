@@ -1,8 +1,9 @@
 <?php
+  require_once "./views/includes/alerts.php";
   require_once './views/includes/head.php';
   require_once './autoload.php';
   require_once "./controllers/HomeController.php";
-  require_once "./views/includes/alerts.php";
+
 
 
   $home= new HomeController();
@@ -12,7 +13,7 @@ if(isset($_GET['page'])){
            $page=$_GET['page'];
            $home->index($page);
    }else{
-     include('./view/includes/404.php');
+     include('./views/404.php');
    }
 }else{
   $home->index('home');

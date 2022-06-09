@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +29,12 @@
               <form id="loginform" action="" method="POST">
                 <div class="sec">
                   <label for="email">Email</label>
-                  <input type="text" name="email" id="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="addon-wrapping">
+                  <input type="text" name="email" id="email" class="form-control" required=”required” placeholder="Email" aria-label="email" aria-describedby="addon-wrapping">
                   <p id="usernameError" class="invalid-feedback small"></p>    
                 </div>
                 <div class="sec">
                   <label for="password">Password</label>
-                  <input type="password" name="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
+                  <input type="password" name="password" id="password" class="form-control" required=”required” placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
                   <p id="passwordError" class="invalid-feedback small"></p>       
                 </div>
                 <div class="sec">
