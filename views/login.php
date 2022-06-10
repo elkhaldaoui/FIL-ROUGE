@@ -1,9 +1,6 @@
 <?php
-
-  $agent = new Login();
-
+  $agent = new LoginController();
   $agent->run();
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

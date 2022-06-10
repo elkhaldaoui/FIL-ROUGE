@@ -1,13 +1,9 @@
 <?php
 
-class Login  {
+include_once 'models/login_model.php';
 
-	// function __construct() {
-	// 	parent::__construct();
-	// 	  Session::init();
-	// }
-	
-	
+class LoginController  {
+
 	function index() {
 	
 		$this->view->render('login/index');
@@ -20,18 +16,19 @@ class Login  {
 			$model= new Login_Model();
 			$email=$_POST['email'];
 			$password=$_POST['password'];
-			// $count =$model->run($email,$password);
-			$model=$model->run($password,$email);
-	    if($model){
-			header('location: dashboard');
-		}
+			$user=$model->run($email);
 			
+			$pass = $user['password'];
+			//echo password_hash('12345', PASSWORD_DEFAULT);
+			if(password_verify($password, $pass)){
+				header('Location: dashboard');
+			
+			}
+			else{
+				echo 'lah ';
+			}
+		}
 	}
-
-		
-	}
-	
-	
 	/* logging out the user */
 	function logout()
 	{
