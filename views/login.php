@@ -22,8 +22,8 @@
     <div style="background-color: lightgrey; opacity: 90%; width: 100%; height: 100vh;">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Usine Management</a>
-                <a href="#" class="btn btn-dark d-flex">Login</a>
+                <a class="navbar-brand" href="home">Usine Management</a>
+                <a href="login" class="btn btn-dark d-flex">Login</a>
             </div>
         </nav>
         <div>

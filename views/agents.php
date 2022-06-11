@@ -1,5 +1,6 @@
 <?php
   require_once 'views/includes/head.php';
+
 ?>
 
 <div class="d-flex" id="wrapper">

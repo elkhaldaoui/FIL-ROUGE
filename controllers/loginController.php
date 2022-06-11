@@ -22,10 +22,11 @@ class LoginController  {
 			//echo password_hash('12345', PASSWORD_DEFAULT);
 			if(password_verify($password, $pass)){
 				header('Location: dashboard');
-			
+				echo '<script>alert("welcom to your dasboard")</script>';
+
 			}
 			else{
-				echo 'lah ';
+				echo '<script>alert("Invalid email or password")</script>';
 			}
 		}
 	}
@@ -33,7 +34,7 @@ class LoginController  {
 	function logout()
 	{
 		Session::destroy();
-		header('location: index');
+		header('location: home');
 		exit;
 	}
 }
