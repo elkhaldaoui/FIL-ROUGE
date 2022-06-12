@@ -1,12 +1,12 @@
 <?php
+include_once 'models/agents_model.php';
 
-
-class AgentController
+class AgentsController
 {
 
-    public function getAllAgent(){
-        $agent = Agent::getAll();
-        return $agent;
+    public function getAllAgents(){
+        $agents = Agents::getAll();
+        return $agents;
     }
 
     public function getOneAgent()
@@ -15,19 +15,19 @@ class AgentController
             $data = array(
                 'id' => $_POST['id'],
             );
-            $agent = Agent::getAgent($data);
+            $agent = Agents::getAgent($data);
             return $agent;
         }
     }
 
-    public function findAgent()
+    public function findAgents()
     {
         if (isset($_POST['search'])) {
             $data = array(
                 'search' => $_POST['search'],
             );
-            $agent = Agent::searchAgent($data);
-            return $agent;
+            $agents = Agents::searchAgent($data);
+            return $agents;
         }
     }
 
@@ -41,16 +41,16 @@ class AgentController
             $data = array(
                 'name' => $_POST['name'],
                 'email' => $_POST['email'],
-                'password' => $_POST['password'],
+                'password' => md5($_POST['password']),
                 'phone' => $_POST['phone'],
                 'situation' =>  $_POST['situation'],
                 'date_admission' =>  $_POST['date_admission'],
                 'role' =>  $_POST['role']
             );
-            $result = Agent::add($data);
+            $result = Agents::add($data);
             if ($result === 'ok') {
                 Session::set('success','Agent Ajouté');
-                Redirect::to('agent');
+                Redirect::to('agents');
             }else{
                 echo $result;
             }
@@ -74,7 +74,7 @@ class AgentController
                 'date_admission' =>  $_POST['date_admission'],
                 'role' =>  $_POST['role']
             );
-            $result = Agent::update($data);
+            $result = Agents::update($data);
             if ($result === 'ok') {
                 Session::set('success', 'Agent Modifié');
                 Redirect::to('agents');
@@ -91,10 +91,10 @@ class AgentController
     {
         if (isset($_POST['id'])) {
             $data['id'] = $_POST['id'];
-            $result = Agent::delete($data);
+            $result = Agents::delete($data);
             if ($result === 'ok') {
                 Session::set('success', 'Agent Supprimé');
-                Redirect::to('agent');
+                Redirect::to('agents');
             } else {
                 echo $result;
             }

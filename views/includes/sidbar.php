@@ -1,4 +1,5 @@
 <!-- Sidebar-->
+<div class="d-flex"id="wrapper">
 <div class="Sidebar" id="sidebar-wrapper">
 <div class="header_img"> <img class="rounded-circle mx-5 p-4" src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
     <br>

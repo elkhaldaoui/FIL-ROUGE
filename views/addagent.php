@@ -1,6 +1,6 @@
 <?php 
 	if(isset($_POST['submit'])){
-		$newAgent = new AgentController();
+		$newAgent = new AgentsController();
 		$newAgent->addAgent();
 	}
 ?>
@@ -10,9 +10,6 @@
 			<div class="card">
 				<div class="card-header">Ajouter un Agent</div>
 				<div class="card-body bg-light">
-					<a href="<?php echo BASE_URL;?>" class="btn btn-sm btn-secondary mr-2 mb-2">
-						<i class="fas fa-home"></i>
-					</a>
 					<form method="post">
 						<div class="form-group">
 							<label for="nom">Name*</label>
@@ -44,6 +41,7 @@
 							<label for="role">Role*</label>
 							<input type="text" name="role" class="form-control">
 						</div>
+						<br>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="submit">Valider</button>
 						</div>
@@ -52,4 +50,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>

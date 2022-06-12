@@ -1,12 +1,12 @@
 <?php 
 	if(isset($_POST['id'])){
-		$exitAgent = new AgentController();
+		$exitAgent = new AgentsController();
 		$agent = $exitAgent->getOneAgent();
 	}else{
 		Redirect::to('agents');
 	}
 	if(isset($_POST['submit'])){
-		$exitAgent = new AgentController();
+		$exitAgent = new AgentsController();
 		$exitAgent->updateAgent();
 	}
 ?>
@@ -16,9 +16,6 @@
 			<div class="card">
 				<div class="card-header">Modifier un Agent</div>
 				<div class="card-body bg-light">
-					<a href="<?php echo BASE_URL;?>" class="btn btn-sm btn-secondary mr-2 mb-2">
-						<i class="fas fa-home"></i>
-					</a>
 					<form method="post">
 						<div class="form-group">
 							<label for="name">Name*</label>
@@ -41,11 +38,11 @@
 							<label for="phone">Phone*</label>
 							<input type="text" name="phone" class="form-control" placeholder="Phone"
 							value="<?php echo $agent->phone; ?>">
-							<input type="hidden" name="id" value="<?php echo $Agent->id;?>">
+							<input type="hidden" name="id" value="<?php echo $agent->id;?>">
 						</div>
 						<div class="form-group">
 							<select class="form-control" name="situation">
-								<option value="1" <?php echo $situation->situation ? 'selected' : ''; ?>>Active</option>
+								<option value="1" <?php echo $agent->situation ? 'selected' : ''; ?>>Active</option>
 								<option value="0"
 								<?php echo !$agent->situation ? 'selected' : ''; ?>
 								>Congé</option>
@@ -67,4 +64,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
