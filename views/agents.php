@@ -26,12 +26,12 @@
         <thead>
         <tr>
         <th>#</th>
-        <th>Name</th>						
+        <th>Name</th>
+        <th>Email</th>						
         <th>Date Admission</th>
-        <th>Role</th>
         <th>Situation</th>
-        <th>Email</th>
         <th>Phone</th>
+        <th>Role</th>
         <th>Action</th>
         </tr>
         </thead>
@@ -39,19 +39,18 @@
         <?php foreach($Agents as $agent):?>
         <tr>
         <td><?php echo $agent['id'];?></td>
-        <td><a href="#"><?php echo $agent['name'];?></a></td>
-        <td><?php echo $agent['date_admission'];?></td>                        
-        <td><?php echo $agent['role'];?></td>
-        <td>
-              <?php echo $agent['situation']
+        <td><?php echo $agent['name'];?></a></td>
+        <td><?php echo $agent['email'];?></td>
+        <td><?php echo $agent['date_admission'];?></td>
+        <td>  <?php echo $agent['situation']
                     ?
                     '<span class="badge badge-success">Active</span>'
                     :
                     '<span class="badge badge-danger">Congé</span>';
               ;?>
         </td>
-        <td><?php echo $agent['email'];?></td>
         <td><?php echo $agent['phone'];?></td>
+        <td><?php echo $agent['role'];?></td>                         
         <td class="d-flex flex-row">
             <form method="post" class="mr-1" action="updateagent">
                   <input type="hidden" name="id" value="<?php echo $agent['id'];?>">

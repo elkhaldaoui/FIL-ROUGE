@@ -1,7 +1,12 @@
 <?php
+  if ($_SERVER['REQUEST_URI'] == "/FIL-ROUGE/login" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/home" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/404") {
+    $test = 0;
+  }
+  else {
+    require_once './views/includes/sidbar.php';
+    require_once './views/includes/navbar.php';
+  }
   require_once './views/includes/head.php';
-  require_once './views/includes/sidbar.php';
-  require_once './views/includes/navbar.php';
   require_once './views/includes/alerts.php';
   require_once './autoload.php';
 
