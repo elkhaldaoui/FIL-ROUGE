@@ -26,7 +26,7 @@
         <thead>
         <tr>
         <th>#</th>
-        <th>Name</th>
+        <th>Full-Name</th>
         <th>Email</th>						
         <th>Date Admission</th>
         <th>Situation</th>
@@ -44,13 +44,19 @@
         <td><?php echo $agent['date_admission'];?></td>
         <td>  <?php echo $agent['situation']
                     ?
-                    '<span class="badge badge-success">Active</span>'
+                    '<span class="badge-success">Active</span>'
                     :
-                    '<span class="badge badge-danger">Congé</span>';
+                    '<span class="badge-danger">Congé</span>';
               ;?>
         </td>
         <td><?php echo $agent['phone'];?></td>
-        <td><?php echo $agent['role'];?></td>                         
+        <td>  <?php echo $agent['role']
+                    ?
+                    '<span class="badge-primary">Admin</span>'
+                    :
+                    '<span class="badge-primary">Employé</span>';
+              ;?>
+        </td>                         
         <td class="d-flex flex-row">
             <form method="post" class="mr-1" action="updateagent">
                   <input type="hidden" name="id" value="<?php echo $agent['id'];?>">

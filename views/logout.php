@@ -1,4 +1,4 @@
 <?php 
 	LoginController::logout();
-	Redirect::to('home');
+	Redirect::to('login');
 ?>

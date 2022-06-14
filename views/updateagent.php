@@ -53,8 +53,12 @@
 							<input type="date" name="date_admission" class="form-control">
 						</div>
 					    <div class="form-group">
-							<label for="role">Role*</label>
-							<input type="text" name="role" class="form-control">
+							<select class="form-control" name="role">
+								<option value="1" <?php echo $agent->role ? 'selected' : ''; ?>>Admin</option>
+								<option value="0"
+								<?php echo !$agent->role ? 'selected' : ''; ?>
+								>Employé</option>
+							</select>
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="submit">Valider</button>

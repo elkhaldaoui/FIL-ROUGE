@@ -1,29 +1,29 @@
 <?php
-  if ($_SERVER['REQUEST_URI'] == "/FIL-ROUGE/login" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/home" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/404") {
-    $test = 0;
+if ($_SERVER['REQUEST_URI'] == "/FIL-ROUGE/login" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/home" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/404") {
+  $test = 0;
   }
   else {
     require_once './views/includes/sidbar.php';
     require_once './views/includes/navbar.php';
   }
-  require_once './views/includes/head.php';
-  require_once './views/includes/alerts.php';
-  require_once './autoload.php';
+    require_once './views/includes/head.php';
+    require_once './views/includes/alerts.php';
+    require_once './autoload.php';
 
   
   $home= new HomeController();
-  $pages= ['home','login','agents','addagent','updateagent','deleteagent','dashboard','anomalies','rapports','releves'];
-if(isset($_GET['page'])){
+  $pages= ['home','login','agents','addagent','updateagent','deleteagent','dashboard','anomalies','rapports','addrapport','releves','404'];
+   if(isset($_GET['page'])){
    if(in_array($_GET['page'],$pages)){
            $page=$_GET['page'];
            $home->index($page);
    }else{
      include('views/404.php');
    }
-}else{
-  $home->index('home');
-}
-?> 
-<?php
-require_once 'views/includes/footer.php';
-?>
+    }else{
+      $home->index('home');
+    }
+    ?> 
+    <?php
+    require_once 'views/includes/footer.php';
+    ?>

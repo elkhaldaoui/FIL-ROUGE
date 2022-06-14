@@ -1,55 +1,43 @@
-<?php
-  require_once 'views/includes/head.php';
+<?php 
+	if(isset($_POST['find'])){
+		$data = new RapportsController();
+		$rapports = $data->findRapports();
+	}else{
+		$data = new RapportsController();
+		$rapports = $data->getAllRapports();
+	}
 ?>
-
-
-<div class="d-flex" id="wrapper">
-  <?php
-    require_once 'views/includes/sidbar.php';
-  ?>
-  <div class="w-100">
-    <?php
-      require_once 'views/includes/navbar.php';
-    ?>
-
-    <!-- Page content-->
-    <!-- cards -->
-    <div class="d-grid gap-2 m-3">
-      <button class="btn btn-primary" type="button">Add New Rapport</button>
-    </div>
-    <div class="row">
-      <div class="col-sm-4 m-4">
-      <div class="card">
-      <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text lh-1">
-        -With supporting text below as a natural lead-in to additional content.
-        -With supporting text below as a natural lead-in to additional content.
-      </p>
-      <button type="button" class="btn btn-success btn-sm">Update</button>
-      <button type="button" class="btn btn-danger btn-sm">Delete</button>
-      </div>
-      </div>
-      </div>
-          <div class="col-sm-4 m-4">
-          <div class="card">
-          <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text lh-1">
-            -With supporting text below as a natural lead-in to additional content.
-            -With supporting text below as a natural lead-in to additional content.
-          </p>
-          <button type="button" class="btn btn-success btn-sm">Update</button>
-          <button type="button" class="btn btn-danger btn-sm">Delete</button>
-          </div>
-          </div>
-          </div>
-    </div>
-    <!-- cards -->
-  </div>
+<!-- Page content-->
+<!-- cards -->
+<div class="d-grid gap-2 m-3">
+  <a href="addrapport" class="btn btn-primary" type="button">Add New Rapport</a>
 </div>
+<?php foreach($rapports as $rapport):?>
+  <div class="container overflow-auto">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><?php echo $rapport['poste'];?></h5>
+          <textarea name="" id="" cols="185" rows="5"><?php echo $rapport['rapport'];?></textarea>
+          <br><br>
+          <label for="date"><?php echo $rapport['date'];?></label>
+          <br><br>
+          <div class="d-flex">
+          <form method="post" class="mr-1" action="updaterapport">
+                  <input type="hidden" name="id" value="<?php echo $rapport['id'];?>">
+                  <button  type="button" class="btn btn-success btn-sm">Update</button>
+          </form>
+          <form method="post" class="mx-1" action="deleterapport">
+                  <input type="hidden" name="id" value="<?php echo $rapport['id'];?>">
+                  <button  type="button" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<?php endforeach;?>
+<!-- cards -->
 
-<?php
-require_once 'views/includes/footer.php';
-?>
+
 

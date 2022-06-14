@@ -20,7 +20,7 @@ class LoginController  {
 			$pass = $user['password'];
 			//echo password_hash('12345', PASSWORD_DEFAULT);
 			header('Location: dashboard');
-			echo '<script>alert("welcom to your dasboard")</script>';
+			echo '<alert>alert("welcom to your dasboard")</alert>';
 			// if(password_verify($password, $pass)){
 			// 	header('Location: dashboard');
 			// 	echo '<script>alert("welcom to your dasboard")</script>';
@@ -35,7 +35,7 @@ class LoginController  {
 	function logout()
 	{
 		Session::destroy();
-		header('location: home');
+		header('location: login');
 		exit;
 	}
 }
