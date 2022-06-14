@@ -6,17 +6,16 @@
 ?>
 <div class="container w-100">
 	<div class="m-2">
-		<div class="">
-			<div class="card">
-				<div class="card-header">Ajouter Rapport</div>
+		<div class="card">
+			<div class="card-header">Ajouter Rapport</div>
 				<div class="card-body bg-light">
 					<form method="post">
 						<div class="form-group">
-                        <select name="poste" class="form-select" aria-label="Default select example">
+                        <select class="form-select" name="poste" aria-label="Default select example">
                             <option selected>Selectioné le Poste</option>
-                            <option value="1">P1</option>
-                            <option value="2">P2</option>
-                            <option value="3">P3</option>
+                            <option value="P1">P1</option>
+                            <option value="P2">P2</option>
+                            <option value="P3">P3</option>
                         </select>
 						</div><br>
 						<div class="form-group">
@@ -32,8 +31,7 @@
 						</div>
 					</form>
 				</div>
-			    </div>
-		    </div>
-	    </div>
+			</div>
+		</div>
     </div>
 </div>

@@ -32,7 +32,7 @@ class Rapports{
     {
         $search = $data['search'];
         try {
-            $query = "SELECT * FROM rapports WHERE titre LIKE ?
+            $query = "SELECT * FROM rapports WHERE poste LIKE ?
                 OR date LIKE ?
             ";
             $statement = DB::connect()->prepare($query);
@@ -46,9 +46,9 @@ class Rapports{
 
     static public function add($data)
     {
-        $stmt = DB::connect()->prepare("INSERT INTO rapports(titre,rapport,date) VALUES 
-                (:titre,:rapport,:date)");
-        $stmt->bindParam(':titre', $data['titre'], PDO::PARAM_STR);
+        $stmt = DB::connect()->prepare("INSERT INTO rapports(poste,rapport,date) VALUES 
+                (:poste,:rapport,:date)");
+        $stmt->bindParam(':poste', $data['poste'], PDO::PARAM_STR);
         $stmt->bindParam(':rapport', $data['rapport'], PDO::PARAM_STR);
         $stmt->bindParam(':date', $data['date'], PDO::PARAM_STR);
         if ($stmt->execute()) {
@@ -61,9 +61,9 @@ class Rapports{
     }
     static public function update($data)
     {
-        $stmt = DB::connect()->prepare("UPDATE rapports SET titre = :titre,rapport = :rapport,date = :date WHERE id = :id");
+        $stmt = DB::connect()->prepare("UPDATE rapports SET poste = :poste,rapport = :rapport,date = :date WHERE id = :id");
         $stmt->bindParam(':id', $data['id'], PDO::PARAM_STR);
-        $stmt->bindParam(':titre', $data['titre'], PDO::PARAM_STR);
+        $stmt->bindParam(':poste', $data['poste'], PDO::PARAM_STR);
         $stmt->bindParam(':rapport', $data['rapport'], PDO::PARAM_STR);
         $stmt->bindParam(':date', $data['date'], PDO::PARAM_STR);
         if ($stmt->execute()) {

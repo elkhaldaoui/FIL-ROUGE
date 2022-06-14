@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_URI'] == "/FIL-ROUGE/login" || $_SERVER['REQUEST_URI'] == 
 
   
   $home= new HomeController();
-  $pages= ['home','login','agents','addagent','updateagent','deleteagent','dashboard','anomalies','rapports','addrapport','releves','404'];
+  $pages= ['home','login','dashboard','agents','addagent','updateagent','deleteagent','anomalies','rapports','addrapport','updaterapport','deleterapport','releves','404'];
    if(isset($_GET['page'])){
    if(in_array($_GET['page'],$pages)){
            $page=$_GET['page'];
