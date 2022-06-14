@@ -22,24 +22,24 @@
 							<input type="text" name="name" class="form-control" placeholder="Name"
 							value="<?php echo $agent->name; ?>"
 							>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label for="email">Email*</label>
 							<input type="text" name="email" class="form-control" placeholder="Email"
 							value="<?php echo $agent->email; ?>"
 							>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label for="password">Password*</label>
 							<input type="password" name="password" class="form-control" placeholder="Password"
 								value="<?php echo $agent->password; ?>">
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label for="phone">Phone*</label>
 							<input type="text" name="phone" class="form-control" placeholder="Phone"
 							value="<?php echo $agent->phone; ?>">
 							<input type="hidden" name="id" value="<?php echo $agent->id;?>">
-						</div>
+						</div><br>
 						<div class="form-group">
 							<select class="form-control" name="situation">
 								<option value="1" <?php echo $agent->situation ? 'selected' : ''; ?>>Active</option>
@@ -47,11 +47,11 @@
 								<?php echo !$agent->situation ? 'selected' : ''; ?>
 								>Congé</option>
 							</select>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<label for="date_admission">Date Admission*</label>
-							<input type="date" name="date_admission" class="form-control">
-						</div>
+							<input type="date" name="date_admission" value="<?php echo $agent->date_admission;?>" class="form-control">
+						</div><br>
 					    <div class="form-group">
 							<select class="form-control" name="role">
 								<option value="1" <?php echo $agent->role ? 'selected' : ''; ?>>Admin</option>
@@ -59,7 +59,7 @@
 								<?php echo !$agent->role ? 'selected' : ''; ?>
 								>Employé</option>
 							</select>
-						</div>
+						</div><br>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="submit">Valider</button>
 						</div>

@@ -13,7 +13,7 @@
 </div>
 <!-- cards -->
 <?php foreach($rapports as $rapport):?>
-  <div class="container overflow-auto m-2">
+  <div class="container overflow-auto">
     <div class="col-sm-12">
       <div class="card">
         <div class="card-body">
