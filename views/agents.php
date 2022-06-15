@@ -42,7 +42,7 @@
         <td><?php echo $agent['name'];?></a></td>
         <td><?php echo $agent['email'];?></td>
         <td><?php echo $agent['date_admission'];?></td>
-        <td>  <?php echo $agent['situation']
+        <td><?php echo $agent['situation']
                     ?
                     '<span class="badge-success">Active</span>'
                     :
