@@ -19,11 +19,11 @@
             </div>
             <div class="col-sm-7">
             <a href="addreleve" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Relevé</span></a>
-            <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>
+            <button onclick="exportData()" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></button>
             </div>
           </div>
         </div>
-        <table class="table table-striped table-hover">
+        <table id="tblStocks" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
           <thead>
           <tr>
           <th>#</th>
