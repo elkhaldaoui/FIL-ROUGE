@@ -1,8 +1,12 @@
+
 <!-- Sidebar-->
 <div class="d-flex"id="wrapper">
 <div class="Sidebar" id="sidebar-wrapper">
-<div class="header_img"> <img class="rounded-circle mx-5 p-4" src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
-    <div class="list-group list-group-flush ms-3">
+<div class="header_img text-center"> <img class="rounded-circle mx-5 p-3" src="https://i.imgur.com/hczKIze.jpg" alt=""> 
+<h3 class="text-center m-3">ADMIN</h3>
+<br>
+</div>
+    <div class=" text-center list-group list-group-flush ms-3">
         <div class="icon_Home pt-1 me-4 d-flex me-3 div-link">
             <a href="dashboard" class="fs-5 text-center text-decoration-none text-dark d-flex align-items-center nav-link">
             <i class="bi  bi-house me-3"></i>
