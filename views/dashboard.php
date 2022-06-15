@@ -25,7 +25,7 @@
             </div>
             </div>
             <div class="align-self-center">
-            <h2 class="h1 mb-0">18</h2>
+            <h2 class="h1 mb-0"><?php $countRapport = new RapportsController; echo count($countRapport ->getAllRapports());?></h2>
             </div>
             </div>
             </div>
@@ -45,7 +45,7 @@
             </div>
             </div>
             <div class="align-self-center">
-            <h2 class="h1 mb-0">84</h2>
+            <h2 class="h1 mb-0"><?php $countReleve = new RelevesController; echo count($countReleve ->getAllReleves());?></h2>
             </div>
             </div>
             </div>
@@ -59,7 +59,7 @@
             <div class="d-flex justify-content-between p-md-1">
             <div class="d-flex flex-row">
             <div class="align-self-center">
-            <h2 class="h1 mb-0 me-4">76</h2>
+            <h2 class="h1 mb-0 me-4"><?php $countAgent = new AgentsController; echo count($countAgent ->getAllAgents());?></h2>
             </div>
             <div>
             <h4>Total Agents</h4>
@@ -79,7 +79,7 @@
             <div class="d-flex justify-content-between p-md-1">
             <div class="d-flex flex-row">
             <div class="align-self-center">
-            <h2 class="h1 mb-0 me-4">11</h2>
+            <h2 class="h1 mb-0 me-4">2</h2>
             </div>
             <div>
             <h4>Total Anomalies</h4>
