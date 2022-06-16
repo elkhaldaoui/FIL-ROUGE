@@ -19,7 +19,10 @@
             </div>
             <div class="col-sm-7">
             <a href="addreleve" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Relevé</span></a>
-            <button onclick="exportData()" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></button>
+            <a  onclick="exportDataa()">  
+            <button  class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></button>
+            </a>
+           
             </div>
           </div>
         </div>
@@ -66,6 +69,51 @@
     </div>
   </div>
 </div>     
+<script>
+  function exportDataa(){ 
+    var table = document.getElementById("tblStocks");
+    console.log(table);
+    var rows =[];  
+      //iterate through rows of table 
+    for(var i=0,row; row = table.rows[i];i++){
+        //rows would be accessed using the "row" variable assigned in the for loop
+        //Get each cell value/column from the row
+        column1 = row.cells[0].innerHTML;
+        column2 = row.cells[1].innerHTML; 
+        column3 = row.cells[2].innerHTML;
+        column4 = row.cells[3].innerHTML;
+        column5 = row.cells[4].innerHTML;
+
+ 
+    /* add a new records in the array */
+      var rowss=rows.push(
+            [
+                column1,
+                column2,
+                column3,
+                column4,
+                column5
+            ]
+        );
+ 
+    } 
+    csvContent = "data:text/csv;charset=utf-8,";
+         /* add the column delimiter as comma(,) and each row splitted by new line character (\n) */
+        rows.forEach(function(rowArray){ 
+            row = rowArray.join(",");
+            csvContent += row + "\r\n";
+        });
+ 
+        /* create a hidden <a> DOM node and set its download attribute */
+        var encodedUri = encodeURI(csvContent);
+        var link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "Stock_Price_Report.csv");
+        document.body.appendChild(link);
+         /* download the data file named "Stock_Price_Report.csv" */
+        link.click(); 
+  }
+</script>
 <!-- table -->
 <!-- Page content-->
 

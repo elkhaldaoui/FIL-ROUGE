@@ -18,7 +18,17 @@
         <h2>Agents <b>Management</b></h2>
         </div>
         <div class="col-sm-7">
-        <a href="addagent" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Agent</span></a>	
+        <?php 
+            if(isset($_SESSION['ROLE']))
+            {
+
+            if($_SESSION['ROLE'] == 'Admin')
+            {
+                echo '
+            <a href="addagent" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Agent</span></a>';
+            }
+            }
+            ?>	
         </div>
         </div>
         </div>
@@ -32,7 +42,16 @@
         <th>Situation</th>
         <th>Phone</th>
         <th>Role</th>
-        <th>Action</th>
+        <?php 
+        if(isset($_SESSION['ROLE']))
+        {
+
+            if($_SESSION['ROLE'] == 'Admin')
+            {
+                echo '<th>Action</th>';
+            }
+        }
+        ?>
         </tr>
         </thead>
         <tbody>
@@ -47,26 +66,30 @@
                     '<span class="badge-success">Active</span>'
                     :
                     '<span class="badge-danger">Congé</span>';
-              ;?>
+            ;?>
         </td>
         <td><?php echo $agent['phone'];?></td>
-        <td>  <?php echo $agent['role']
-                    ?
-                    '<span class="badge-primary">Admin</span>'
-                    :
-                    '<span class="badge-primary">Employé</span>';
-              ;?>
-        </td>                         
-        <td class="d-flex flex-row">
-            <form method="post" class="mr-1" action="updateagent">
-                  <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
-                  <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
-            </form>
-            <form method="post" class="mr-1" action="deleteagent">
-                  <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
-                  <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-            </form>
-	  </td>
+        <td> <?php echo $agent['role'];?>
+        </td> 
+        <?php 
+        if(isset($_SESSION['ROLE']))
+        {
+
+            if($_SESSION['ROLE'] == 'Admin')
+            { ?>
+                <td class="d-flex flex-row">
+                <form method="post" class="mr-1" action="updateagent">
+                      <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
+                      <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+                </form>
+                <form method="post" class="mr-1" action="deleteagent">
+                      <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
+                      <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                </form>
+                </td>
+          <?php   }
+        }
+        ?>
         </tr>
         <?php endforeach;?>
         </tbody>

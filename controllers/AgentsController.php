@@ -45,7 +45,7 @@ class AgentsController
                 'phone' => $_POST['phone'],
                 'situation' =>  $_POST['situation'],
                 'date_admission' =>  $_POST['date_admission'],
-                'role' =>  $_POST['role']
+                'role' =>  'employé'
             );
             $result = Agents::add($data);
             if ($result === 'ok') {

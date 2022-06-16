@@ -18,6 +18,9 @@ class LoginController  {
 			$password=md5($_POST['password']);
 			$user=$model->run($email);
 			$pass = $user['password'];
+		session_start();
+
+		$_SESSION['ROLE']=$user['role'];
 			//echo password_hash('12345', PASSWORD_DEFAULT);
 			header('Location: dashboard');
 			echo '<alert>alert("welcom to your dasboard")</alert>';
@@ -32,9 +35,11 @@ class LoginController  {
 		}
 	}
 	/* logging out the user */
-	function logout()
+	public function logout()
 	{
-		Session::destroy();
+	
+	session_unset();
+	session_destroy();
 		header('location: login');
 		exit;
 	}

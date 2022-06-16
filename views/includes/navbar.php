@@ -13,7 +13,7 @@
                     <button class="btn position-absolute top-0 end-0 btn-sh" type="submit"><i class="bi bi-search"></i></button>
                 </div>
                     <button  class="btn"> <i class="fa-solid fa-bell fs-4"></i></button>
-                    <button  class="btn"><a href="" class="fa-solid fa-right-from-bracket fs-4"></a></button>
+                    <button  class="btn"><a href="logout" class="fa-solid fa-right-from-bracket fs-4"></a></button>
             </form>
         </div>
     </nav>

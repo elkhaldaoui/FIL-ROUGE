@@ -1,4 +1,5 @@
 <?php 
-	LoginController::logout();
-	Redirect::to('login');
+$log= new LoginController();
+	$log->logout();
+	
 ?>

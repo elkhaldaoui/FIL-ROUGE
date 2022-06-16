@@ -37,10 +37,10 @@
 							<label for="date_admission">Date Admission*</label>
 							<input type="date" name="date_admission" class="form-control">
 						</div>
-					    <div class="form-group">
+					    <!-- <div class="form-group">
 							<label for="role">Role*</label>
 							<input type="text" name="role" class="form-control">
-						</div>
+						</div> -->
 						<br>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary" name="submit">Valider</button>

@@ -20,14 +20,12 @@
 						<div class="form-group">
 							<label for="name">Name*</label>
 							<input type="text" name="name" class="form-control" placeholder="Name"
-							value="<?php echo $agent->name; ?>"
-							>
+							value="<?php echo $agent->name; ?>">
 						</div><br>
 						<div class="form-group">
 							<label for="email">Email*</label>
 							<input type="text" name="email" class="form-control" placeholder="Email"
-							value="<?php echo $agent->email; ?>"
-							>
+							value="<?php echo $agent->email; ?>">
 						</div><br>
 						<div class="form-group">
 							<label for="password">Password*</label>
