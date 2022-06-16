@@ -106,9 +106,10 @@
  
         /* create a hidden <a> DOM node and set its download attribute */
         var encodedUri = encodeURI(csvContent);
+        // console.log(encodedUri);
         var link = document.createElement("a");
         link.setAttribute("href", encodedUri);
-        link.setAttribute("download", "Stock_Price_Report.csv");
+        link.setAttribute("download", "Relevé.csv");
         document.body.appendChild(link);
          /* download the data file named "Stock_Price_Report.csv" */
         link.click(); 
