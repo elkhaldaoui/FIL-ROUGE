@@ -1,5 +1,5 @@
 <?php 
 $log= new LoginController();
-	$log->logout();
+$log->logout();
 	
 ?>

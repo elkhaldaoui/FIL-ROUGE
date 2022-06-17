@@ -1,6 +1,8 @@
 <?php
+if(isset($_POST['login'])){
   $agent = new LoginController();
   $agent->run();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +31,7 @@
         <div>
           <div class="login">
               <h2 class="tlogin">Authenticate</h2>
-              <form id="loginform" action="" method="POST">
+              <form id="loginform" method="POST">
                 <div class="sec">
                   <label for="email">Email</label>
                   <input type="text" name="email" id="email" class="form-control" required=”required” placeholder="Email" aria-label="email" aria-describedby="addon-wrapping">
@@ -41,7 +43,8 @@
                   <p id="passwordError" class="invalid-feedback small"></p>       
                 </div>
                 <div class="sec">
-                  <input class="btn btn-sepcial" type="submit" value="Login" name="login">
+                  <button class="btn btn-sepcial" type="submit" name="login">Login</button>
+                  <!-- <input class="btn btn-sepcial" type="submit" value="Login" name="login"> -->
                 </div>     
               </form>
               <p class="s13">No account? Ask your admin for one.</p>

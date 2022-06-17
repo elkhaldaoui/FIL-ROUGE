@@ -10,20 +10,32 @@ class LoginController  {
 	}
 	
 	function run()
-	{
-		
+	{	
 		if(isset($_POST['login'])){
+			$data = array(
+				'email' => $_POST['email'],
+				'password' => $_POST['password']
+			);
+			
 			$model= new Login_Model();
-			$email=$_POST['email'];
-			$password=md5($_POST['password']);
-			$user=$model->run($email);
-			$pass = $user['password'];
-		session_start();
+			$get = $model->run($data);
+			if(password_verify($_POST['password'], $get['password']) == true){
+				header("location: dashboard");
+			}
+			else{
+				header("location: login");
+			}
 
-		$_SESSION['ROLE']=$user['role'];
+
+			// $email=$_POST['email'];
+			// $user=$model->run($email);
+			// $pass = $user['password'];
+		// session_start();
+
+		// $_SESSION['ROLE']=$user['role'];
 			//echo password_hash('12345', PASSWORD_DEFAULT);
-			header('Location: dashboard');
-			echo '<alert>alert("welcom to your dasboard")</alert>';
+			// header('Location: dashboard');
+			// echo '<alert>alert("welcom to your dasboard")</alert>';
 			// if(password_verify($password, $pass)){
 			// 	header('Location: dashboard');
 			// 	echo '<script>alert("welcom to your dasboard")</script>';
@@ -34,13 +46,25 @@ class LoginController  {
 			// }
 		}
 	}
+
+	public function up(){
+		if(isset($_POST['submit'])){
+			$data = array(
+				'email' => $_POST['email'],
+				'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+			);
+			$model= new Login_Model();
+			$get = $model->up($data);
+		}
+	}
+
 	/* logging out the user */
 	public function logout()
 	{
 	
 	session_unset();
 	session_destroy();
-		header('location: login');
+		header('location: home');
 		exit;
 	}
 }
