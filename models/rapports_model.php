@@ -61,11 +61,15 @@ class Rapports{
     }
     static public function update($data)
     {
-        $stmt = DB::connect()->prepare("UPDATE rapports SET poste = :poste,rapport = :rapport,date = :date WHERE id = :id");
-        $stmt->bindParam(':id', $data['id'], PDO::PARAM_STR);
-        $stmt->bindParam(':poste', $data['poste'], PDO::PARAM_STR);
-        $stmt->bindParam(':rapport', $data['rapport'], PDO::PARAM_STR);
-        $stmt->bindParam(':date', $data['date'], PDO::PARAM_STR);
+        $stmt = DB::connect()->prepare("UPDATE rapports SET
+            poste = :poste,
+            rapport = :rapport,
+            date = :date 
+            WHERE id = :id");
+        $stmt->bindParam(':poste', $data['poste']);
+        $stmt->bindParam(':rapport', $data['rapport']);
+        $stmt->bindParam(':date', $data['date']);
+        $stmt->bindParam(':id', $data['id']);
         if ($stmt->execute()) {
             return 'ok';
         } else {

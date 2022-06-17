@@ -32,7 +32,7 @@ class Agents{
     {
         $search = $data['search'];
         try {
-            $query = "SELECT * FROM agents WHERE name LIKE ?
+            $query = "SELECT * FROM agents WHERE situation LIKE ?
                 OR email LIKE ?
             ";
             $statement = DB::connect()->prepare($query);
@@ -56,6 +56,9 @@ class Agents{
         $stmt->bindParam(':date_admission', $data['date_admission'], PDO::PARAM_STR);
         $stmt->bindParam(':role', $data['role'], PDO::PARAM_STR);
         if ($stmt->execute()) {
+
+            $_SESSION['role'] = $data['role'];
+
             return 'ok';
         } else {
             return 'error';

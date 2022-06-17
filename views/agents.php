@@ -1,7 +1,7 @@
 <?php 
 	if(isset($_POST['find'])){
 		$data = new AgentsController();
-		$agents = $data->findAgents();
+		$Agents = $data->findAgents();
 	}else{
 		$data = new AgentsController();
 		$Agents = $data->getAllAgents();
@@ -18,17 +18,7 @@
         <h2>Agents <b>Management</b></h2>
         </div>
         <div class="col-sm-7">
-        <?php 
-            if(isset($_SESSION['ROLE']))
-            {
-
-            if($_SESSION['ROLE'] == 'Admin')
-            {
-                echo '
-            <a href="addagent" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Agent</span></a>';
-            }
-            }
-            ?>	
+        <a href="addagent" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Agent</span></a>	
         </div>
         </div>
         </div>
@@ -42,16 +32,7 @@
         <th>Situation</th>
         <th>Phone</th>
         <th>Role</th>
-        <?php 
-        if(isset($_SESSION['ROLE']))
-        {
-
-            if($_SESSION['ROLE'] == 'Admin')
-            {
-                echo '<th>Action</th>';
-            }
-        }
-        ?>
+        <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -71,13 +52,7 @@
         <td><?php echo $agent['phone'];?></td>
         <td> <?php echo $agent['role'];?>
         </td> 
-        <?php 
-        if(isset($_SESSION['ROLE']))
-        {
-
-            if($_SESSION['ROLE'] == 'Admin')
-            { ?>
-                <td class="d-flex flex-row">
+        <td class="d-flex flex-row">
                 <form method="post" class="mr-1" action="updateagent">
                       <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
                       <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
@@ -86,10 +61,7 @@
                       <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
                       <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                 </form>
-                </td>
-          <?php   }
-        }
-        ?>
+        </td>
         </tr>
         <?php endforeach;?>
         </tbody>

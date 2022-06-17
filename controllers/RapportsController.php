@@ -59,7 +59,7 @@ class RapportsController
 
     public function updateRapport()
     {
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['update'])) {
             $data = array(
                 'id' => $_POST['id'],
                 'poste' => $_POST['poste'],
@@ -67,7 +67,7 @@ class RapportsController
                 'date' => $_POST['date'],
             );
             $result = Rapports::update($data);
-            if ($result === 'ok') {
+            if ($result == 'ok') {
                 Session::set('success', 'Rapport Modifié');
                 Redirect::to('rapports');
             } else {

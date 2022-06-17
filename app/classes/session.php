@@ -8,7 +8,7 @@ class Session
      */
     static public function set($type,$message)
     {
-        setcookie($type,$message,time() + 10,"/");
+        setcookie($type,$message,time() + 5,"/");
     }
 
     static public function logout(){
