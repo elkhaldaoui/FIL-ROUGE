@@ -2,10 +2,8 @@
 	if(isset($_POST['id'])){
 		$exitReleve = new RelevesController();
 		$releve = $exitReleve->getOneReleve();
-	}else{
-		Redirect::to('releves');
 	}
-	if(isset($_POST['submit'])){
+	if(isset($_POST['update'])){
 		$exitReleve = new RelevesController();
 		$exitReleve->updateReleve();
 	}
@@ -31,7 +29,7 @@
 						</div><br>
 						<div class="form-group">
 							<label for="temperature">Temperature</label>
-							<input type="text" name="password" class="form-control" placeholder="Temperature"
+							<input type="text" name="temperature" class="form-control" placeholder="Temperature"
 								value="<?php echo $releve->temperature; ?>">
 						</div><br>
 						<div class="form-group">
@@ -43,12 +41,13 @@
 							</select>
 						</div><br>
 						<div class="form-group">
-							<label for="date_admission">Date</label>
+							<label for="date">Date</label>
 							<input type="date" name="date" value="<?php echo $releve->date;?>" class="form-control">
 						</div><br>
-						<div class="form-group">
-							<button type="submit" class="btn btn-primary" name="submit">Valider</button>
-						</div>
+						<input type="hidden" name="id" value="<?php echo $releve->id; ?>">
+						<!-- <div class="form-group"> -->
+							<button type="submit" class="btn btn-primary mt-3" name="update">Valider</button>
+						<!-- </div> -->
 					</form>
 				</div>
 			</div>

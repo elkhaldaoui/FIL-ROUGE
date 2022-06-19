@@ -63,13 +63,19 @@ class Releves{
     }
     static public function update($data)
     {
-        $stmt = DB::connect()->prepare("UPDATE releves SET matricule = :matricule,etat = :etat,vitesse = :vitesse,temperature = :temperature,date = :date WHERE id = :id");
-        $stmt->bindParam(':id', $data['id'], PDO::PARAM_STR);
-        $stmt->bindParam(':matricule', $data['matricule'], PDO::PARAM_STR);
-        $stmt->bindParam(':etat', $data['etat'], PDO::PARAM_STR);
-        $stmt->bindParam(':vitesse', $data['vitesse'], PDO::PARAM_STR);
-        $stmt->bindParam(':temperature', $data['temperature'], PDO::PARAM_STR);
-        $stmt->bindParam(':date', $data['date'], PDO::PARAM_STR);
+        $stmt = DB::connect()->prepare("UPDATE releves SET 
+        matricule = :matricule,
+        etat = :etat,
+        vitesse = :vitesse,
+        temperature = :temperature,
+        date = :date
+        WHERE id = :id");
+        $stmt->bindParam(':id', $data['id']);
+        $stmt->bindParam(':matricule', $data['matricule']);
+        $stmt->bindParam(':etat', $data['etat']);
+        $stmt->bindParam(':vitesse', $data['vitesse']);
+        $stmt->bindParam(':temperature', $data['temperature']);
+        $stmt->bindParam(':date', $data['date']);
         if ($stmt->execute()) {
             return 'ok';
         } else {

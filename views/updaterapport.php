@@ -33,7 +33,7 @@
 						</div>
 						<input type="hidden" name="id" value="<?php echo $rapport->id; ?>">
 						<!-- <div class="form-group"> -->
-							<button type="submit" class="btn btn-primary mt-3" name="update">Valider</button>
+						<button type="submit" class="btn btn-primary mt-3" name="update">Valider</button>
 						<!-- </div> -->
 					</form>
 				    </div>

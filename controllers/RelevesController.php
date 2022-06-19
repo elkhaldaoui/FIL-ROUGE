@@ -61,7 +61,7 @@ class RelevesController
 
     public function updateReleve()
     {
-        if (isset($_POST['submit'])) {
+        if (isset($_POST['update'])) {
             $data = array(
                 'id' => $_POST['id'],
                 'matricule' => $_POST['matricule'],
@@ -71,8 +71,8 @@ class RelevesController
                 'date' =>  $_POST['date'],
             );
             $result = Releves::update($data);
-            if ($result === 'ok') {
-                Session::set('success', 'Releve Modifié');
+            if ($result == 'ok') {
+                Session::set('success', 'Relevé Modifié');
                 Redirect::to('releves');
             } else {
                 echo $result;
