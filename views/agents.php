@@ -9,7 +9,7 @@
 ?>
     <!-- Page content-->
     <!-- table -->
-        <div class="container-xl">
+        <div class="container-xl overflow-auto">
         <div class="table-responsive">
         <div class="table-wrapper">
         <div class="table-title">

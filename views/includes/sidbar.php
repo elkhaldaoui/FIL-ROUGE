@@ -3,7 +3,7 @@
 <div class="d-flex"id="wrapper">
 <div class="Sidebar" id="sidebar-wrapper">
 <div class="header_img text-center"> <img class="rounded-circle mx-5 p-3" src="https://i.imgur.com/hczKIze.jpg" alt=""> 
-<h3 class="text-center m-3">ADMIN</h3>
+<h3 class="text-center m-3">Role</h3>
 <br>
 </div>
     <div class=" text-center list-group list-group-flush ms-3">
