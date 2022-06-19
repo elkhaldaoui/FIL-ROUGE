@@ -44,9 +44,9 @@
         <td><?php echo $agent['date_admission'];?></td>
         <td><?php echo $agent['situation']
                     ?
-                    '<span class="badge-success">Active</span>'
+                    '<span class="badge bg-success">Active</span>'
                     :
-                    '<span class="badge-danger">Congé</span>';
+                    '<span class="badge bg-danger">Congé</span>';
             ;?>
         </td>
         <td><?php echo $agent['phone'];?></td>
