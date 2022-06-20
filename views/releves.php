@@ -18,11 +18,9 @@
             <h2><b>Relevés des Machines</b></h2>
             </div>
             <div class="col-sm-7">
-            <a href="addreleve" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Relevé</span></a>
-            <a  onclick="exportDataa()">  
-            <button  class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></button>
+            <a href="addreleve" class="btn btn-secondary"><i class="material-icons">&#xE147;</i><span>Add New Relevé</span></a>
+            <a onclick="exportData()" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i><span>Export to Excel</span>
             </a>
-           
             </div>
           </div>
         </div>
@@ -47,10 +45,11 @@
           <td><?php echo $releve['vitesse'];?><span> tr/h</span></td>
           <td><?php echo $releve['etat']
                     ?
-                    '<span class="badge-success">Disponible</span>'
+                    '<span class="badge bg-success">Disponible</span>'
                     :
-                    '<span class="badge-danger">Indisponible</span>';
-              ;?></td>
+                    '<span class="badge bg-danger">Indisponible</span>';
+              ;?>
+          </td>
           <td><?php echo $releve['date'];?></td>
           <td class="d-flex flex-row">
             <form method="post" class="mr-1" action="updatereleve">
@@ -71,4 +70,3 @@
 </div>     
 <!-- table -->
 <!-- Page content-->
-

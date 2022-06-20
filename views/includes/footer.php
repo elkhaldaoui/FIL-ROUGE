@@ -3,6 +3,6 @@
         <!-- Core theme JS-->
         <script src="views/assests/js/script.js"></script>
         <!-- export table JS-->
-        <script src="views/assests/js/csv.js"></script>
+        <script type="text/javascript" src="views/assests/js/csv.js"></script>
     </body>
 </html>
