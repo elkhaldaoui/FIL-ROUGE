@@ -15,14 +15,14 @@ class Login_Model
 	
 	}
 
-	public function up($data){
-		$stmt = Db::connect()->prepare('INSERT INTO `agents` (email, password) VALUES(:email, :password)');
-		$stmt->bindParam(':email', $data['email']);
-		$stmt->bindParam(':password', $data['password']);
-		if($stmt->execute()){
-			echo "O Nasser";
-			die();
-		}
-	}
+	// public function up($data){
+	// 	$stmt = Db::connect()->prepare('INSERT INTO `agents` (email, password) VALUES(:email, :password)');
+	// 	$stmt->bindParam(':email', $data['email']);
+	// 	$stmt->bindParam(':password', $data['password']);
+	// 	if($stmt->execute()){
+	// 		echo "O Nasser";
+	// 		die();
+	// 	}
+	// }
 		
 }

@@ -19,12 +19,12 @@
             </div>
             <div class="col-sm-7">
             <a href="addreleve" class="btn btn-secondary"><i class="material-icons">&#xE147;</i><span>Add New Relevé</span></a>
-            <a onclick="exportData()" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i><span>Export to Excel</span>
-            </a>
+            <button onclick="ExportToExcel('xlsx')" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i><span>Export to Excel</span>
+            </button>
             </div>
           </div>
         </div>
-        <table id="tblStocks" cellpadding="0" cellspacing="0" class="table table-striped table-hover">
+        <table id="tbl_exporttable_to_xls" class="table table-striped table-hover">
           <thead>
           <tr>
           <th>#</th>
@@ -70,3 +70,15 @@
 </div>     
 <!-- table -->
 <!-- Page content-->
+
+<!-- tExport table to exel -->
+<script>
+function ExportToExcel(type, fn, dl) {
+       var elt = document.getElementById('tbl_exporttable_to_xls');
+       var wb = XLSX.utils.table_to_book(elt, { sheet: "sheet1" });
+       return dl ?
+         XLSX.write(wb, { bookType: type, bookSST: true, type: 'base64' }):
+         XLSX.writeFile(wb, fn || ('Relevé.' + (type || 'xlsx')));
+}
+</script>
+
