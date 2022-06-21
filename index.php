@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_URI'] == "/FIL-ROUGE/login" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/home" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/404") {
+if ($_SERVER['REQUEST_URI'] == "/FIL-ROUGE/login" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/logout" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/home" || $_SERVER['REQUEST_URI'] == "/FIL-ROUGE/404") {
   $test = 0;
   }
   else {

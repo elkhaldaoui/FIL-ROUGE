@@ -11,9 +11,9 @@ class Session
         setcookie($type,$message,time() + 5,"/");
     }
 
-    static public function logout(){
-        session_destroy();
-    }
+    // static public function logout(){
+    //     session_destroy();
+    // }
 
 }
                                                     

@@ -51,6 +51,7 @@ class AgentsController
             if ($result === 'ok') {
                 Session::set('success','Agent Ajouté');
                 Redirect::to('agents');
+                // echo '<script>window.location.href = "agents";</script>';
             }else{
                 echo $result;
             }

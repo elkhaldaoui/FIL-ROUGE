@@ -5,8 +5,9 @@ include_once 'models/login_model.php';
 class LoginController  {
 
 	function index() {
-	
+
 		$this->view->render('login/index');
+		
 	}
 	
 	function run()
@@ -43,9 +44,8 @@ class LoginController  {
 	/* logging out the user */
 	public function logout()
 	{
-	
-	session_unset();
-	session_destroy();
+		session_unset();
+		session_destroy();
 		header('location: home');
 		exit;
 	}
