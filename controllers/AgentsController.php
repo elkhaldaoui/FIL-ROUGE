@@ -41,17 +41,17 @@ class AgentsController
             $data = array(
                 'name' => $_POST['name'],
                 'email' => $_POST['email'],
-                'password' => md5($_POST['password']),
+                'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 'phone' => $_POST['phone'],
                 'situation' =>  $_POST['situation'],
                 'date_admission' =>  $_POST['date_admission'],
-                'role' =>  'Employé'
+                'role' => $_POST['role']
             );
             $result = Agents::add($data);
             if ($result === 'ok') {
                 Session::set('success','Agent Ajouté');
-                Redirect::to('agents');
-                // echo '<script>window.location.href = "agents";</script>';
+                // Redirect::to('agents');
+                echo '<script>window.location.href = "agents";</script>';
             }else{
                 echo $result;
             }
@@ -69,16 +69,18 @@ class AgentsController
                 'id' => $_POST['id'],
                 'name' => $_POST['name'],
                 'email' => $_POST['email'],
-                'password' => $_POST['password'],
+                'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 'phone' => $_POST['phone'],
                 'situation' =>  $_POST['situation'],
                 'date_admission' =>  $_POST['date_admission'],
-                'role' =>  'Employé'
+                'role' =>  $_POST['role']
             );
             $result = Agents::update($data);
             if ($result === 'ok') {
+                // echo "ok";
                 Session::set('success', 'Agent Modifié');
-                Redirect::to('agents');
+                // Redirect::to('agents');
+                echo '<script>window.location.href = "agents";</script>';
             } else {
                 echo $result;
             }
@@ -88,14 +90,15 @@ class AgentsController
      * return @void
      */
 
-    public function deleteAgent()
+    public function deleteAgent()   
     {
         if (isset($_POST['id'])) {
             $data['id'] = $_POST['id'];
             $result = Agents::delete($data);
             if ($result === 'ok') {
-                Session::set('success', 'Agent Supprimé');
-                Redirect::to('agents');
+                Session::set('error', 'Agent Supprimé');
+                // Redirect::to('agents');
+                echo '<script>window.location.href = "agents";</script>';
             } else {
                 echo $result;
             }

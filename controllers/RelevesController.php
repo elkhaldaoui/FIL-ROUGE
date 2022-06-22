@@ -89,7 +89,7 @@ class RelevesController
             $data['id'] = $_POST['id'];
             $result = Releves::delete($data);
             if ($result === 'ok') {
-                Session::set('success', 'Releve Supprimé');
+                Session::set('error', 'Releve Supprimé');
                 Redirect::to('releves');
             } else {
                 echo $result;

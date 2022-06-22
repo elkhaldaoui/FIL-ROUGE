@@ -52,8 +52,8 @@
 						</div><br>
 					    <div class="form-group">
 							<select class="form-control" name="role">
-								<option value="1" <?php echo $agent->role ? 'selected' : ''; ?>>Admin</option>
-								<option value="0"
+								<option value="Admin" <?php echo $agent->role ? 'selected' : ''; ?>>Admin</option>
+								<option value="Emlpoye"
 								<?php echo !$agent->role ? 'selected' : ''; ?>
 								>Employé</option>
 							</select>

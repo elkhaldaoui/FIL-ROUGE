@@ -85,7 +85,7 @@ class AnomaliesController
             $data['id'] = $_POST['id'];
             $result = Anomalies::delete($data);
             if ($result === 'ok') {
-                Session::set('success', 'Anomalie Supprimé');
+                Session::set('error', 'Anomalie Supprimé');
                 Redirect::to('anomalies');
             } else {
                 echo $result;

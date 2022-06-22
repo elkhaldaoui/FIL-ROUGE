@@ -6,6 +6,7 @@
 		$data = new AgentsController();
 		$Agents = $data->getAllAgents();
 	}
+  // var_dump($_SESSION)
 ?>
     <!-- Page content-->
     <!-- table -->
@@ -52,16 +53,24 @@
         <td><?php echo $agent['phone'];?></td>
         <td> <?php echo $agent['role'];?>
         </td> 
-        <td class="d-flex flex-row">
-                <form method="post" class="mr-1" action="updateagent">
-                      <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
-                      <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
-                </form>
-                <form method="post" class="mr-1" action="deleteagent">
-                      <input type="hidden" name="id" value="<?php echo $agent['id'];?>">
-                      <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                </form>
-        </td>
+          <?php 
+              if ($_SESSION['role'] == 'Admin') {
+                echo '
+                <td class="d-flex flex-row">
+                  <form method="post" class="mr-1" action="updateagent">
+                        <input type="hidden" name="id" value=" ' . $agent['id'] . '">
+                        <button class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></button>
+                  </form>
+                  <form method="post" class="mr-1" action="deleteagent">
+                        <input type="hidden" name="id" value="'.$agent['id'].'">
+                        <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                  </form>
+                </td>
+                ';
+              } else {
+                echo '';
+              }
+          ?>
         </tr>
         <?php endforeach;?>
         </tbody>

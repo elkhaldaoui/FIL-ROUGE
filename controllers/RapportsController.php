@@ -85,7 +85,7 @@ class RapportsController
             $data['id'] = $_POST['id'];
             $result = Rapports::delete($data);
             if ($result === 'ok') {
-                Session::set('success', 'Rapport Supprimé');
+                Session::set('error', 'Rapport Supprimé');
                 Redirect::to('rapports');
             } else {
                 echo $result;

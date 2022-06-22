@@ -20,8 +20,10 @@ class LoginController  {
 			
 			$model= new Login_Model();
 			$get = $model->run($data);
-			$_SESSION['user'] = $get['name'];
 			if(password_verify($_POST['password'], $get['password']) == true){
+				$_SESSION['user'] = $get['name'];
+				$_SESSION['role'] = $get['role'];
+				echo '<alert class="alert alert-success">Login Successful</alert>';
 				header("location: dashboard");
 			}
 			else{

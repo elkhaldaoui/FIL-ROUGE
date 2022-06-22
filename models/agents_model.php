@@ -57,7 +57,7 @@ class Agents{
         $stmt->bindParam(':role', $data['role'], PDO::PARAM_STR);
         if ($stmt->execute()) {
 
-            $_SESSION['role'] = $data['role'];
+            // $_SESSION['role'] = $data['role'];
 
             return 'ok';
         } else {
