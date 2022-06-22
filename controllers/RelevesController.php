@@ -48,7 +48,8 @@ class RelevesController
             $result = Releves::add($data);
             if ($result === 'ok') {
                 Session::set('success','Releve Ajouté');
-                Redirect::to('releves');
+                // Redirect::to('releves');
+                echo '<script>window.location.href = "releves";</script>';
             }else{
                 echo $result;
             }
@@ -73,7 +74,8 @@ class RelevesController
             $result = Releves::update($data);
             if ($result == 'ok') {
                 Session::set('success', 'Relevé Modifié');
-                Redirect::to('releves');
+                // Redirect::to('releves');
+                echo '<script>window.location.href = "releves";</script>';
             } else {
                 echo $result;
             }
@@ -90,7 +92,8 @@ class RelevesController
             $result = Releves::delete($data);
             if ($result === 'ok') {
                 Session::set('error', 'Releve Supprimé');
-                Redirect::to('releves');
+                // Redirect::to('releves');
+                echo '<script>window.location.href = "releves";</script>';
             } else {
                 echo $result;
             }

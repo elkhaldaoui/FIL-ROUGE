@@ -46,7 +46,8 @@ class AnomaliesController
             $result = Anomalies::add($data);
             if ($result === 'ok') {
                 Session::set('success','Anomalie Ajouté');
-                Redirect::to('anomalies');
+                // Redirect::to('anomalies');
+                echo '<script>window.location.href = "anomalies";</script>';
             }else{
                 echo $result;
             }
@@ -69,7 +70,8 @@ class AnomaliesController
             $result = Anomalies::update($data);
             if ($result == 'ok') {
                 Session::set('success', 'Anomalie Modifié');
-                Redirect::to('anomalies');
+                // Redirect::to('anomalies');
+                echo '<script>window.location.href = "anomalies";</script>';
             } else {
                 echo $result;
             }
@@ -86,7 +88,8 @@ class AnomaliesController
             $result = Anomalies::delete($data);
             if ($result === 'ok') {
                 Session::set('error', 'Anomalie Supprimé');
-                Redirect::to('anomalies');
+                // Redirect::to('anomalies');
+                echo '<script>window.location.href = "anomalies";</script>';
             } else {
                 echo $result;
             }

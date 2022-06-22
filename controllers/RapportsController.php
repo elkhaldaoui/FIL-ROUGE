@@ -46,7 +46,8 @@ class RapportsController
             $result = Rapports::add($data);
             if ($result === 'ok') {
                 Session::set('success','Rapport Ajouté');
-                Redirect::to('rapports');
+                // Redirect::to('rapports');
+                echo '<script>window.location.href = "rapports";</script>';
             }else{
                 echo $result;
             }
@@ -69,7 +70,8 @@ class RapportsController
             $result = Rapports::update($data);
             if ($result == 'ok') {
                 Session::set('success', 'Rapport Modifié');
-                Redirect::to('rapports');
+                // Redirect::to('rapports');
+                echo '<script>window.location.href = "rapports";</script>';
             } else {
                 echo $result;
             }
@@ -86,7 +88,8 @@ class RapportsController
             $result = Rapports::delete($data);
             if ($result === 'ok') {
                 Session::set('error', 'Rapport Supprimé');
-                Redirect::to('rapports');
+                // Redirect::to('rapports');
+                echo '<script>window.location.href = "rapports";</script>';
             } else {
                 echo $result;
             }
