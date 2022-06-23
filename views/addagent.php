@@ -38,8 +38,10 @@
 							<input type="date" name="date_admission" class="form-control">
 						</div>
 					    <div class="form-group">
-							<label for="role">Role*</label>
-							<input type="text" name="role" class="form-control">
+							<select class="form-control" name="role">
+								<option value="Admin">Admin</option>
+								<option value="Employe">Employe</option>
+							</select>
 						</div>
 						<br>
 						<div class="form-group">

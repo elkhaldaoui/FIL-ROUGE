@@ -3,17 +3,11 @@
 class Session
 {
 
-    /**
-     * return @void
-     */
     static public function set($type,$message)
     {
-        setcookie($type,$message,time() + 10,"/");
+        setcookie($type,$message,time() + 5,"/");
     }
 
-    // static public function logout(){
-    //     session_destroy();
-    // }
 
 }
                                                     

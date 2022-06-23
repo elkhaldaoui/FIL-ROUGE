@@ -58,9 +58,7 @@ class AgentsController
         }
     }
 
-    /**
-     * return @void
-     */
+
 
     public function updateAgent()
     {

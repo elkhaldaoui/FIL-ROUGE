@@ -136,7 +136,7 @@ body {
 				</div>
 				<h2>Error<br>404</h2>
 			</div>
-			<p>The page you are looking for might have been removed had its name changed or is temporarily unavailable. <a href="home">Back to homepage</a></p>
+			<p>The page you are looking for might have been removed had its name changed or is temporarily unavailable. <a href="<?php if(isset($_SESSION['login'])){echo'dashboard';}else{echo'home';}?>">Back to homepage</a></p>
 		</div>
 	</div>
 </body>

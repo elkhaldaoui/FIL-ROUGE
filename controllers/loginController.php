@@ -23,6 +23,7 @@ class LoginController  {
 			if(password_verify($_POST['password'], $get['password']) == true){
 				$_SESSION['user'] = $get['name'];
 				$_SESSION['role'] = $get['role'];
+				$_SESSION['login'] = true;
 				echo '<alert class="alert alert-success">Login Successful</alert>';
 				header("location: dashboard");
 			}
@@ -32,16 +33,16 @@ class LoginController  {
 		}
 	}
 
-	public function up(){
-		if(isset($_POST['submit'])){
-			$data = array(
-				'email' => $_POST['email'],
-				'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-			);
-			$model= new Login_Model();
-			$get = $model->up($data);
-		}
-	}
+	// public function up(){
+	// 	if(isset($_POST['submit'])){
+	// 		$data = array(
+	// 			'email' => $_POST['email'],
+	// 			'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+	// 		);
+	// 		$model= new Login_Model();
+	// 		$get = $model->up($data);
+	// 	}
+	// }
 
 	/* logging out the user */
 	public function logout()
