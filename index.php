@@ -6,17 +6,18 @@ if(isset($_SESSION['login'])){if ($_SERVER['REQUEST_URI'] == "/FIL-ROUGE/login" 
   else {
     require_once './views/includes/sidbar.php';
     require_once './views/includes/navbar.php';
+    require_once './views/includes/alerts.php';
   }}
     require_once './views/includes/head.php';
-    include 'views/includes/alerts.php';
     require_once './autoload.php';
-
+    require_once './views/includes/alerts.php';
+ 
   
   $home= new HomeController();
   $pages= ['dashboard','agents','addagent','updateagent','deleteagent','rapports','addrapport','updaterapport','deleterapport','releves','addreleve','updatereleve','deletereleve','anomalies','addanomalie','updateanomalie','deleteanomalie','404','logout'];
    if(isset($_GET['page'])){
     if(isset($_SESSION['login']))
-   {if(in_array($_GET['page'],$pages)){
+    {if(in_array($_GET['page'],$pages)){
            $page=$_GET['page'];
            $home->index($page);
    }else{

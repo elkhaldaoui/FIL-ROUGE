@@ -10,5 +10,7 @@
 
 	if(isset($_COOKIE['info'])){
 		echo '<div class="alert alert-info">'.$_COOKIE['info'].'</div>';
+	}else{
+		echo '';
 	}
 ?>

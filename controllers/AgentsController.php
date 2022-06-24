@@ -49,7 +49,7 @@ class AgentsController
             );
             $result = Agents::add($data);
             if ($result === 'ok') {
-                Session::set('success','Agent Ajouté');
+                // Session::set('success','Agent Ajouté');
                 // Redirect::to('agents');
                 echo '<script>window.location.href = "agents";</script>';
             }else{
@@ -76,8 +76,9 @@ class AgentsController
             $result = Agents::update($data);
             if ($result === 'ok') {
                 // echo "ok";
-                Session::set('success', 'Agent Modifié');
+                Session::set('success', 'Agent Modifie');
                 // Redirect::to('agents');
+                // exit();
                 echo '<script>window.location.href = "agents";</script>';
             } else {
                 echo $result;

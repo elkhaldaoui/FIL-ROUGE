@@ -31,16 +31,18 @@ if(isset($_POST['login'])){
         <div>
           <div class="login">
               <h2 class="tlogin">Authenticate</h2>
-              <form id="loginform" method="POST">
+              <form id="loginform" method="POST" class="needs-validation" novalidate>
                 <div class="sec">
                   <label for="email">Email</label>
-                  <input type="text" name="email" id="email" class="form-control" required=”required” placeholder="Email" aria-label="email" aria-describedby="addon-wrapping">
-                  <p id="usernameError" class="invalid-feedback small"></p>    
+                  <input type="text" name="email" id="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="addon-wrapping" required>
+                  <p id="usernameError" class="invalid-feedback small"></p>  
+                  <p class="invalid-feedback">Please choose a email.</p> 
                 </div>
                 <div class="sec">
                   <label for="password">Password</label>
-                  <input type="password" name="password" id="password" class="form-control" required=”required” placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping">
-                  <p id="passwordError" class="invalid-feedback small"></p>       
+                  <input type="password" name="password" id="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="addon-wrapping" required>
+                  <p id="passwordError" class="invalid-feedback small"></p>
+                  <p class="invalid-feedback">Please choose a password.</p>
                 </div>
                 <div class="sec">
                   <button class="btn btn-sepcial" type="submit" name="login">Login</button>
@@ -52,5 +54,6 @@ if(isset($_POST['login'])){
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="views/assests/js/validateBootstrap.js"></script>
 </body>
 </html>
