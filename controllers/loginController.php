@@ -33,17 +33,6 @@ class LoginController  {
 		}
 	}
 
-	// public function up(){
-	// 	if(isset($_POST['submit'])){
-	// 		$data = array(
-	// 			'email' => $_POST['email'],
-	// 			'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
-	// 		);
-	// 		$model= new Login_Model();
-	// 		$get = $model->up($data);
-	// 	}
-	// }
-
 	/* logging out the user */
 	public function logout()
 	{

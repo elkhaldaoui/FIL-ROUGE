@@ -1,44 +1,44 @@
 <?php
 
-class Agents{
+class Clients{
 
     /**
      * return @void
      */
 
     static public function getAll(){
-        $stmt = DB::connect()->prepare("SELECT * FROM agents");
+        $stmt = DB::connect()->prepare("SELECT * FROM clients");
         $stmt->execute();
         return $stmt->fetchAll();
         $stmt->close();
         $stmt = null;
     }
 
-    static public function getAgent($data)
+    static public function getClient($data)
     {
         $id = $data['id'];
         try {
-            $query = "SELECT * FROM agents WHERE id=:id";
+            $query = "SELECT * FROM clients WHERE id=:id";
             $statement = DB::connect()->prepare($query);
             $statement->execute(array(":id" => $id));
-            $agent = $statement->fetch(PDO::FETCH_OBJ);
-            return $agent;
+            $client = $statement->fetch(PDO::FETCH_OBJ);
+            return $client;
         } catch (PDOException $ex) {
             echo 'erreur' . $ex->getMessage();
         }
     }
 
-    public function searchAgent($data)
+    public function searchClient($data)
     {
         $search = $data['search'];
         try {
-            $query = "SELECT * FROM agents WHERE situation LIKE ?
-                OR email LIKE ?
+            $query = "SELECT * FROM clients WHERE adresse LIKE ?
+
             ";
             $statement = DB::connect()->prepare($query);
             $statement->execute(array('%'.$search.'%', '%' . $search . '%'));
-            $agents = $statement->fetchAll();
-            return $agents;
+            $clients = $statement->fetchAll();
+            return $clients;
         } catch (PDOException $ex) {
             echo 'erreur' . $ex->getMessage();
         }
@@ -46,19 +46,19 @@ class Agents{
 
     static public function add($data)
     {
-        $stmt = DB::connect()->prepare("INSERT INTO agents(name,email,password,phone,situation,date_admission,role) VALUES 
-                (:name,:email,:password,:phone,:situation,:date_admission,:role)");
-        $stmt->bindParam(':name', $data['name'], PDO::PARAM_STR);
+        $stmt = DB::connect()->prepare("INSERT INTO clients(nom,prenom,email,password,phone,adresse,situation,date_admission,salaire,role) VALUES 
+                (:nom,:prenom,:email,:password,:phone,:adresse,:situation,:date_admission,:salaire,:role)");
+        $stmt->bindParam(':nom', $data['nom'], PDO::PARAM_STR);
+        $stmt->bindParam(':prenom', $data['prenom'], PDO::PARAM_STR);
         $stmt->bindParam(':email', $data['email'], PDO::PARAM_STR);
         $stmt->bindParam(':password', $data['password'], PDO::PARAM_STR);
         $stmt->bindParam(':phone', $data['phone'], PDO::PARAM_STR);
+        $stmt->bindParam(':adresse', $data['adresse'], PDO::PARAM_STR);
         $stmt->bindParam(':situation', $data['situation'], PDO::PARAM_STR);
         $stmt->bindParam(':date_admission', $data['date_admission'], PDO::PARAM_STR);
+        $stmt->bindParam(':salaire', $data['salaire'], PDO::PARAM_STR);
         $stmt->bindParam(':role', $data['role'], PDO::PARAM_STR);
         if ($stmt->execute()) {
-
-            // $_SESSION['role'] = $data['role'];
-
             return 'ok';
         } else {
             return 'error';
@@ -68,14 +68,16 @@ class Agents{
     }
     static public function update($data)
     {
-        $stmt = DB::connect()->prepare("UPDATE agents SET name = :name,email = :email,password = :password,phone = :phone,situation = :situation,date_admission = :date_admission,role = :role WHERE id = :id");
+        $stmt = DB::connect()->prepare("UPDATE clients SET nom = :nom,prenom = :prenom,email = :email,phone = :phone,adresse = :adresse,situation = :situation,date_admission = :date_admission,salaire = :salaire,role = :role WHERE id = :id");
         $stmt->bindParam(':id', $data['id'], PDO::PARAM_STR);
-        $stmt->bindParam(':name', $data['name'], PDO::PARAM_STR);
+        $stmt->bindParam(':nom', $data['nom'], PDO::PARAM_STR);
+        $stmt->bindParam(':prenom', $data['prenom'], PDO::PARAM_STR);
         $stmt->bindParam(':email', $data['email'], PDO::PARAM_STR);
-        $stmt->bindParam(':password', $data['password'], PDO::PARAM_STR);
         $stmt->bindParam(':phone', $data['phone'], PDO::PARAM_STR);
+        $stmt->bindParam(':adresse', $data['adresse'], PDO::PARAM_STR);
         $stmt->bindParam(':situation', $data['situation'], PDO::PARAM_STR);
         $stmt->bindParam(':date_admission', $data['date_admission'], PDO::PARAM_STR);
+        $stmt->bindParam(':salaire', $data['salaire'], PDO::PARAM_STR);
         $stmt->bindParam(':role', $data['role'], PDO::PARAM_STR);
         if ($stmt->execute()) {
             return 'ok';
@@ -89,7 +91,7 @@ class Agents{
     {
         $id = $data['id'];
         try {
-            $query = "DELETE FROM agents WHERE id=:id";
+            $query = "DELETE FROM clients WHERE id=:id";
             $statement = DB::connect()->prepare($query);
             $statement->execute(array(":id" => $id));
             if ($statement->execute()) {

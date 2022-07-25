@@ -1,33 +1,33 @@
 <?php
-include_once 'models/agents_model.php';
+include_once 'models/clients_model.php';
 
-class AgentsController
+class ClientsController
 {
 
-    public function getAllAgents(){
-        $agents = Agents::getAll();
-        return $agents;
+    public function getAllClients(){
+        $clients = Clients::getAll();
+        return $clients;
     }
 
-    public function getOneAgent()
+    public function getOneclient()
     {
         if (isset($_POST['id'])) {
             $data = array(
                 'id' => $_POST['id'],
             );
-            $agent = Agents::getAgent($data);
-            return $agent;
+            $client = Clients::getclient($data);
+            return $client;
         }
     }
 
-    public function findAgents()
+    public function findClients()
     {
         if (isset($_POST['search'])) {
             $data = array(
                 'search' => $_POST['search'],
             );
-            $agents = Agents::searchAgent($data);
-            return $agents;
+            $clients = Clients::searchclient($data);
+            return $clients;
         }
     }
 
@@ -35,23 +35,26 @@ class AgentsController
      * return @void
      */
 
-    public function addAgent()
+    public function addClient()
     {
         if (isset($_POST['submit'])) {
             $data = array(
-                'name' => $_POST['name'],
+                'nom' => $_POST['nom'],
+                'prenom' => $_POST['prenom'],
                 'email' => $_POST['email'],
                 'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 'phone' => $_POST['phone'],
+                'adresse' => $_POST['adresse'],
                 'situation' =>  $_POST['situation'],
                 'date_admission' =>  $_POST['date_admission'],
+                'salaire' =>  $_POST['salaire'],
                 'role' => $_POST['role']
             );
-            $result = Agents::add($data);
+            $result = Clients::add($data);
             if ($result === 'ok') {
                 // Session::set('success','Agent Ajouté');
                 // Redirect::to('agents');
-                echo '<script>window.location.href = "agents";</script>';
+                echo '<script>window.location.href = "clients";</script>';
             }else{
                 echo $result;
             }
@@ -60,26 +63,28 @@ class AgentsController
 
 
 
-    public function updateAgent()
+    public function updateClient()
     {
         if (isset($_POST['submit'])) {
             $data = array(
                 'id' => $_POST['id'],
-                'name' => $_POST['name'],
+                'nom' => $_POST['nom'],
+                'prenom' => $_POST['prenom'],
                 'email' => $_POST['email'],
-                'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                // 'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
                 'phone' => $_POST['phone'],
+                'adresse' => $_POST['adresse'],
                 'situation' =>  $_POST['situation'],
                 'date_admission' =>  $_POST['date_admission'],
                 'role' =>  $_POST['role']
             );
-            $result = Agents::update($data);
+            $result = Clients::update($data);
             if ($result === 'ok') {
                 // echo "ok";
                 Session::set('success', 'Agent Modifie');
                 // Redirect::to('agents');
                 // exit();
-                echo '<script>window.location.href = "agents";</script>';
+                echo '<script>window.location.href = "clients";</script>';
             } else {
                 echo $result;
             }
@@ -89,15 +94,15 @@ class AgentsController
      * return @void
      */
 
-    public function deleteAgent()   
+    public function deleteClient()   
     {
         if (isset($_POST['id'])) {
             $data['id'] = $_POST['id'];
-            $result = Agents::delete($data);
+            $result = Clients::delete($data);
             if ($result === 'ok') {
                 Session::set('error', 'Agent Supprimé');
                 // Redirect::to('agents');
-                echo '<script>window.location.href = "agents";</script>';
+                echo '<script>window.location.href = "clients";</script>';
             } else {
                 echo $result;
             }
